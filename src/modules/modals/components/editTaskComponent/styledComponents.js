@@ -20,7 +20,7 @@ Wrapper.FormWrapper = styled.form`
 ;
 `;
 
-Wrapper.exitBtn = styled.button`
+Wrapper.exitButton = styled.button`
   font-size: 20px;
   width: 25px;
   height: 25px;

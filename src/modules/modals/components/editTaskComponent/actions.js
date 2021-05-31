@@ -1,5 +1,5 @@
 import constants from '../../../../constants';
 
-export const onEditTaskRequest = payload => ({
+export const editTaskRequest = payload => ({
     type: constants.EDIT_TASK_REQUEST, payload 
 });

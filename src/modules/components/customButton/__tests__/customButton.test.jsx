@@ -10,7 +10,6 @@ const props = {
     handleEvent: () => {},
     buttonBackground: '#fff',
     buttonBackgroundHover:'#fff',
-    buttonBackgroundActive: '#fff'
 };
 
 describe('CustomButton snapshot', () => {

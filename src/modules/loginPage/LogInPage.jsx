@@ -1,15 +1,20 @@
-import React, {useCallback, useState} from 'react';
+import React, { useCallback, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import * as actions from './actions';
+import { ThemeProvider } from 'styled-components';
+
 import {
     Wrapper,
     ButtonWrapper
 } from './styledComponent';
-import { ThemeProvider } from 'styled-components';
 import theme from '../themes/colors.js';
 import CustomInput from '../components/customInput/CustomInput.jsx';
 import CustomButton from '../components/customButton/CustomButton.jsx';
-import { Link } from 'react-router-dom';
 
-const LogInPage = ({signInRequest}) => {
+
+const LogInPage = () => {
+    const dispatch = useDispatch();
     const [userData, setUserData] = useState({
         username: '',
         password: ''
@@ -27,12 +32,12 @@ const LogInPage = ({signInRequest}) => {
 
     const onSignIn = useCallback( event => {
         event.preventDefault();
-        signInRequest(userData);
+        dispatch(actions.signInRequest(userData));
         setUserData({
                 username: '',
                 password: ''
         })
-    }, [userData, signInRequest]);
+    }, [userData]);
 
     return(
         <ThemeProvider theme={theme}>

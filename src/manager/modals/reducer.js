@@ -1,14 +1,14 @@
 import constants from '../../constants';
 
 const initialState = {
-    [constants.EDIT_TASK_MODAL_WINDOW_TYPE]: {
+    [constants.EDIT_TASK_TYPE]: {
         data: null,
         isShow: false,
     }
 }
 export default (state = initialState, action) => {
     switch (action.type) {
-        case constants.OPEN_MODAL_WINDOW: {
+        case constants.OPEN_MODAL: {
             const { type, data = null } = action.payload;
 
             return {
@@ -20,7 +20,7 @@ export default (state = initialState, action) => {
                 }
             }
         }
-        case constants.CLOSE_MODAL_WINDOW: {
+        case constants.CLOSE_MODAL: {
             const { type } = action.payload;
 
             return {

@@ -33,7 +33,9 @@ const CustomPaginator = props => {
 }
 
 CustomPaginator.propTypes = {
-    pageQuantity: PropTypes.number
+    handlePage: PropTypes.func,
+    currentPage: PropTypes.func,
+    pageQuantity: PropTypes.number,
 }
 
 CustomPaginator.defaultProps = {

@@ -8,11 +8,11 @@ import {
 } from './selectors';
 import { takeEvery, call, put, select } from 'redux-saga/effects';
 
-export function* watchTodoModule() {
+export function* watchTableManager() {
     yield takeEvery([
         constants.GET_TASKS_REQUEST,
         constants.SORT_FIELD_REQUEST,
-        constants.CHANGE_PAGE_REQUEST
+        constants.CHANGE_PAGE
     ], workerGetTasks);
 }
 

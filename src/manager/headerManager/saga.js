@@ -5,7 +5,7 @@ import formDataCreator from '../../utils/formDataCreator';
 import { takeEvery, call, put } from 'redux-saga/effects';
 
 export function* watchHeaderModule() {
-  yield takeEvery(constants.ADD_TASK_REQUEST, workerAddTask);
+  yield takeEvery(constants.SAVE_TASK, workerAddTask);
 }
 
 function* workerAddTask(action) {

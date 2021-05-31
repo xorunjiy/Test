@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    closeModalWindow: payload => dispatch(actions.onCloseModalWindow(payload)),
+    closeModalWindow: payload => dispatch(actions.closeModalWindow(payload)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Component);

@@ -18,7 +18,7 @@ export default (state = initialState, action) => {
                 pageQuantity: action.payload.pageQuantity,
                 totalTasksCount: action.payload.total_task_count,
             }
-        case constants.CHANGE_PAGE_REQUEST:
+        case constants.CHANGE_PAGE:
             return {
                 ...state,
                 currentPage: action.payload

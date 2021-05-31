@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomTable snapshot should correctly render 1`] = `
+<div
+  className=""
+>
+  <div
+    className=""
+  >
+    <p
+      className=""
+      id={2}
+      name="username"
+    >
+      User name
+    </p>
+  </div>
+  <div
+    className=""
+  >
+    <div
+      className=""
+      id={25354}
+    >
+      <p
+        className=""
+      >
+        Zppppa
+      </p>
+      <p
+        className=""
+      >
+        zaz11@gmail.com
+      </p>
+      <p
+        className=""
+      >
+        ZZZZZZZ1
+      </p>
+      <p
+        className=""
+      />
+    </div>
+  </div>
+</div>
+`;

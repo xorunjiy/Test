@@ -12,7 +12,7 @@ const EditTaskModal = props => {
 
     const onClose = useCallback( () => {
         closeModalWindow({
-            type: constants.EDIT_TASK_MODAL_WINDOW_TYPE,
+            type: constants.EDIT_TASK_TYPE,
         });
     }, [closeModalWindow]);
 

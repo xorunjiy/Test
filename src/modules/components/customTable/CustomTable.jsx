@@ -7,6 +7,7 @@ import {
     Table,
     TableHeader,
 } from './styledComponents.js'
+import PropTypes from "prop-types";
 
 const CustomTable = props => {
     const {
@@ -50,6 +51,15 @@ const CustomTable = props => {
             </Table>
         </ThemeProvider>
     );
+}
+
+CustomTable.propTypes = {
+    rows: PropTypes.array,
+    isLogged: PropTypes.bool,
+    sortHandle: PropTypes.func,
+    onOpenModal: PropTypes.func,
+    columnTitles: PropTypes.array,
+    setTaskStatusFormat: PropTypes.func,
 }
 
 export default React.memo(CustomTable);

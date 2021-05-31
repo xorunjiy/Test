@@ -3,29 +3,31 @@ import { ThemeProvider } from 'styled-components';
 import theme from '../themes/colors.js';
 import { TodoWrapper, MainWrapper } from './styledComponents.js';
 import CustomTable  from '../components/customTable/CustomTable.jsx';
-import HeaderModule from '../HeaderModule';
+import HeaderModule from '../HeaderModule/HeaderModule.jsx';
 import CustomPaginator from '../components/customPaginator/CustomPaginator.jsx';
 import CustomButton from '../components/customButton/CustomButton.jsx';
 import { Link }  from 'react-router-dom';
+import {useDispatch, useSelector} from 'react-redux';
+import {
+    getTasks,
+    getUserStatus,
+    getCurrentPage,
+    getPageQuantity
+} from './selectors';
+import * as actions from './actions';
 
-const TodoModule = props => {
-    const {
-        tasks,
-        logOut,
-        isLogged,
-        changePage,
-        currentPage,
-        pageQuantity,
-        checkUserStatus,
-        getTasksRequest,
-        sortFieldRequest,
-        openEditTaskModal,
-    } = props;
+const TableModule = () => {
+    const dispatch = useDispatch();
+
+    const tasks = useSelector(getTasks);
+    const isLogged = useSelector(getUserStatus);
+    const currentPage = useSelector(getCurrentPage);
+    const pageQuantity = useSelector(getPageQuantity);
 
     useEffect(() => {
-        getTasksRequest();
-        checkUserStatus();
-    }, [getTasksRequest, checkUserStatus]);
+        dispatch(actions.getTasksRequest());
+        dispatch(actions.checkUserStatus());
+    }, []);
 
     const columnTitles = [
         {
@@ -50,30 +52,31 @@ const TodoModule = props => {
         }];
 
     const sortField = useCallback( event => {
-        sortFieldRequest(event.target.getAttribute('name')) 
-    }, [sortFieldRequest]);
+        const field = event.target.getAttribute('name');
+        dispatch(actions.sortFieldRequest(field));
+    }, []);
 
     const handlePage = useCallback( event => {
         const { id } = event.target;
-        changePage(id);
-    }, [changePage]);
+        dispatch(actions.changePage(id));
+    }, []);
 
     const onOpenModal = useCallback( event => {
-        if(isLogged){
+        if(isLogged) {
             let currentElementId = event.target.id || event.target.parentElement.id;
-            tasks.find(element =>{
+            tasks.find(element => {
                 event.preventDefault()
                 if(+currentElementId === element.id){
                     const taskData = {
                             taskId: element.id,
                             taskText: element.text,
                             taskStatus: element.status
-                        }
-                    openEditTaskModal(taskData);
+                    }
+                    dispatch(actions.openEditTaskModal(taskData));
                 }
             });
         }
-    }, [tasks, openEditTaskModal]);
+    }, [tasks]);
 
     const setTaskStatusFormat = taskStatus => {
         if(taskStatus === 0){
@@ -85,6 +88,10 @@ const TodoModule = props => {
         } else if (taskStatus === 11) {
             return 'task is edited by admin and completed'
         }
+    }
+
+    const logOut = () => {
+        dispatch(actions.logOut());
     }
 
     return(
@@ -120,4 +127,4 @@ const TodoModule = props => {
     );
 }
 
-export default React.memo(TodoModule);
+export default React.memo(TableModule);

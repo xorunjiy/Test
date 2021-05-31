@@ -1,1 +1,1 @@
-export const getUserStatus = state => state.loginModule.isLogged;
+export const getUserStatus = state => state.loginManager.isLogged;

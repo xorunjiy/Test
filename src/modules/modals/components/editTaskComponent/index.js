@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    editTaskRequest: payload => dispatch(actions.onEditTaskRequest(payload)),
+    editTaskRequest: payload => dispatch(actions.editTaskRequest(payload)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Component);

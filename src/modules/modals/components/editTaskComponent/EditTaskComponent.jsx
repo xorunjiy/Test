@@ -52,36 +52,36 @@ const EditTaskComponent = props => {
     return (
         <ThemeProvider theme={theme}>
             <Wrapper>
-                <Wrapper.exitBtn 
+                <Wrapper.exitButton
                     data-at='wrapper_exitBtn'
-                    children='X'
                     onClick={onClose}
+                    children='X'
                 />
                 <Wrapper.FormWrapper onSubmit={onSubmit}>
                     <CustomInput
+                        name='task-text'
                         width={70}
                         value={taskText}
-                        name='task-text'
                         label='Task text'
-                        fontSize={25}
                         height={30}
-                        inputBackground={theme.colorFont}
+                        fontSize={25}
                         labelColor={theme.colorFont}
                         handleChange={getInputValue}
+                        inputBackground={theme.colorFont}
                     />
                     <CustomInput 
                         type='checkbox'
-                        checked={isTaskDone}
                         label='Task status'
-                        labelColor={theme.colorFont}
+                        checked={isTaskDone}
                         fontSize={25}
-                        inputBackground={theme.colorFont}  
-                        handleChange={getCheckboxStatus} 
+                        labelColor={theme.colorFont}
+                        handleChange={getCheckboxStatus}
+                        inputBackground={theme.colorFont}
                     />
                     <CustomButton 
                         type='submit'
-                        height={30}
                         text='Save'
+                        height={30}
                     />
                 </Wrapper.FormWrapper>
             </Wrapper>

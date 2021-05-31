@@ -33,13 +33,13 @@ const HeaderModule = () => {
 
     const onSaveTask = useCallback(event => {
         event.preventDefault();
-        addTaskRequest(taskData)
+        dispatch(actions.addTaskRequest(taskData));
         setTaskData({
             username: '',
             email: '',
             text: ''
         });
-    }, [taskData, addTaskRequest])
+    }, [taskData]);
 
     return (
         <ThemeProvider theme={theme}>

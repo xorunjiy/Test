@@ -11,7 +11,7 @@ const Modals = props => {
     } = props;
 
     const styles = getModalStyles();
-    const editTaskModalData = modals[constants.EDIT_TASK_MODAL_WINDOW_TYPE];
+    const editTaskModalData = modals[constants.EDIT_TASK_TYPE];
 
     const modalStyles = {
         content: {

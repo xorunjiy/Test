@@ -7,7 +7,7 @@ import {setTokenLS} from "../../utils/logicLS";
 
 export function* watchLoginModule() {
   yield takeEvery(constants.SIGN_IN_REQUEST, workerSignIn);
-  yield takeEvery(constants.CHECK_USER_STATUS, workerCheckUserStatus);
+  yield takeEvery(constants.CHECK_STATUS, workerCheckUserStatus);
   yield takeEvery(constants.LOG_OUT, workerlogOut);
 }
 

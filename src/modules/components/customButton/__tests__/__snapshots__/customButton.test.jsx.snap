@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomButton snapshot should correctly render 1`] = `
+<button
+  className=""
+  fontSize={24}
+  height={40}
+  onClick={[Function]}
+  type="button"
+  width={40}
+>
+  add task
+</button>
+`;

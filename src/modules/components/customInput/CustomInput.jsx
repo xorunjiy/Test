@@ -45,15 +45,19 @@ const CustomInput = props => {
 
 CustomInput.propTypes = {
     type: PropTypes.string,
+    label: PropTypes.string,
     width: PropTypes.number,
     value: PropTypes.string,
     height: PropTypes.number,
+    checked: PropTypes.bool,
     display: PropTypes.string,
     required: PropTypes.bool,
     fontSize: PropTypes.number,
     labelColor: PropTypes.string,
     inputTitle: PropTypes.string,
+    handleChange: PropTypes.func,
     inputBackground: PropTypes.string,
+
 }
 
 CustomInput.defaultProps = {
