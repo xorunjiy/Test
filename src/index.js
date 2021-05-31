@@ -5,12 +5,11 @@ import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './roots/rootReducer/rootReducer';
 import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
-import logger from 'redux-logger';
 import { watchRootSaga } from './roots/rootReducer/rootSaga';
 
 function init() {
     const sagaMiddleware = createSagaMiddleware();
-    const store = createStore(rootReducer, applyMiddleware(logger, sagaMiddleware));
+    const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
     window.store = store;
 
     sagaMiddleware.run(watchRootSaga);

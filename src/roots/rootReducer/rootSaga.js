@@ -1,11 +1,14 @@
 import { all, call } from 'redux-saga/effects';
 import { watchTableManager } from '../../manager/tableManager/saga';
 import { watchHeaderModule } from '../../manager/headerManager/saga';
-import { watchLoginModule } from '../../manager/loginManager/saga';
+import { watchLoginManager } from '../../manager/loginManager/saga';
 import { watchModals } from '../../manager/modals/saga';
 
 const sagaList = [
-    watchTableManager, watchHeaderModule, watchLoginModule, watchModals
+    watchModals,
+    watchTableManager,
+    watchHeaderModule,
+    watchLoginManager,
 ];
 
 export function* watchRootSaga() {

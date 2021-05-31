@@ -1,6 +1,6 @@
 const baseUrl = 'https://uxcandy.com/~shapoval/test-task-backend/v2';
 
-export const getAllTasks = async url => {
+export const getTasks = async url => {
     return await fetch(url)
     .then(response => response.json())
     .catch(err => console.error('ERROR', err))

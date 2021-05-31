@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect} from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
 import theme from '../themes/colors.js';
 import { TodoWrapper, MainWrapper } from './styledComponents.js';
@@ -7,7 +7,7 @@ import HeaderModule from '../HeaderModule/HeaderModule.jsx';
 import CustomPaginator from '../components/customPaginator/CustomPaginator.jsx';
 import CustomButton from '../components/customButton/CustomButton.jsx';
 import { Link }  from 'react-router-dom';
-import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
     getTasks,
     getUserStatus,

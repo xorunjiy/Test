@@ -5,7 +5,7 @@ import formDataCreator from '../../utils/formDataCreator';
 import { takeEvery, call, put } from 'redux-saga/effects';
 import {setTokenLS} from "../../utils/logicLS";
 
-export function* watchLoginModule() {
+export function* watchLoginManager() {
   yield takeEvery(constants.SIGN_IN_REQUEST, workerSignIn);
   yield takeEvery(constants.CHECK_STATUS, workerCheckUserStatus);
   yield takeEvery(constants.LOG_OUT, workerlogOut);
@@ -18,7 +18,7 @@ function* workerSignIn(action) {
       const { status, message } = response;
 
       if (status === 'ok'){
-        yield put (actions.onSignInSuccess(message.token))
+        yield put (actions.signInSuccess(message.token))
         yield call(setTokenLS, message.token);
       } else {
         alert(message.password)
@@ -33,7 +33,7 @@ function* workerCheckUserStatus() {
     if(localStorage.getItem('userToken')){
       const userToken = JSON.parse(localStorage.getItem('userToken'));
 
-      yield put (actions.onSignInSuccess(userToken))
+      yield put (actions.signInSuccess(userToken))
     }
   } catch (err) {
     console.error('ERROR', err);

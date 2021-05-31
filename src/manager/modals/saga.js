@@ -16,7 +16,7 @@ function* workerEditTask(action) {
     if (status === 'error') {
       alert('Need authorization');
     } else {
-      yield put(actions.onGetTasksRequest());
+      yield put(actions.getTasksRequest());
     }
   } catch (err) {
     console.error('ERROR', err);

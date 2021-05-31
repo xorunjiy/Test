@@ -12,9 +12,9 @@ function* workerAddTask(action) {
   try {
     const formData = yield call(formDataCreator, action.payload);
     const response = yield call(api.addTask, formData);
-    console.log(formData, 'formData');
+
     if (response.status === 'ok') {
-      yield put(actions.onGetTasksRequest());
+      yield put(actions.getTasksRequest());
       alert('Task was added successfully');
     }
   } catch (err) {
