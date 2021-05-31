@@ -1,0 +1,15 @@
+export default Object.defineProperties({}, {
+    LOG_OUT           : { value: 'log_out', writable: false },
+    SAVE_TASK         : { value: 'save_task', writable: false },
+    OPEN_MODAL        : { value: 'open_modal', writable: false },
+    CLOSE_MODAL       : { value: 'close_modal', writable: false },
+    CHANGE_PAGE       : { value: 'change_page', writable: false },
+    CHECK_STATUS      : { value: 'check_status', writable: false },
+    EDIT_TASK_TYPE    : { value: 'edit_task_type', writable: false },
+    SIGN_IN_SUCCESS   : { value: 'sign_in_success', writable: false },
+    SIGN_IN_REQUEST   : { value: 'sign_in_request', writable: false },
+    GET_TASKS_REQUEST : { value: 'get_tasks_request', writable: false },
+    EDIT_TASK_REQUEST : { value: 'edit_task_request', writable: false },
+    GET_TASKS_SUCCESS : { value: 'get_tasks_success', writable: false },
+    SORT_FIELD_REQUEST: { value: 'sort_field_request', writable: false },
+});

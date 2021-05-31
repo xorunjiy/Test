@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomPaginator snapshot should correctly render 1`] = `
+<div
+  className=""
+>
+  <span
+    className=""
+  >
+    <button
+      className=""
+      id={1}
+    >
+      1
+    </button>
+    <button
+      className=""
+      id={2}
+    >
+      2
+    </button>
+  </span>
+</div>
+`;

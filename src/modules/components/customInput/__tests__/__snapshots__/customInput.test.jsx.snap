@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomInput snapshot should correctly render 1`] = `
+<div
+  className=""
+  display="block"
+>
+  <input
+    className=""
+    fontSize={18}
+    height={25}
+    required={false}
+    type="text"
+    value=""
+    width={40}
+  />
+</div>
+`;
